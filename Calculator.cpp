@@ -1,16 +1,47 @@
 #include <iostream>
 
+using namespace std;
+
 int main() {
   int number1;
   int number2;
+  string sign; // *  /  +  -
+  int sum;
 
-  std::cout << "Enter a number: ";
-  std::cin >> number1;
-  std::cout << "Enter second number: ";
-  std::cin >> number2;
+  cout << "Enter a number: ";
+  cin >> number1;
 
-  int sum = number1 + number2;
-  std::cout << sum << std::endl;
+  cout << "Enter second number: ";
+  cin >> number2;
+
+  cout << "Enter the sign you want to expect: ";
+  cin >> sign;
+
+  if(sign == "*") {
+    sum = number1 * number2;
+    cout << sum << endl;
+  }
+
+  if(sign == "/") {
+    if(number2 == 0) {
+      cout << "You can't divide by 0" << endl;
+    } else {
+      sum = number1 / number2;
+      cout << sum << endl;
+    }
+  }
+
+  if(sign == "+") {
+    sum = number1 + number2;
+    cout << sum << endl;
+  }
+
+  if(sign == "-") {
+    sum = number1 - number2;
+    cout << sum << endl;
+  }
+
+  cout << "Program ended successfully!!" << endl;
 
   return 0;
 }
